@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Note from "./Components/Note/note";
+import FullNote from "./Components/Note/fullnote";
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -11,15 +14,12 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             Learn React
           </a>
         </header>
+          <Note title='First Note' text='траляляля'/>
+          <FullNote title='First Note' fulltext='здесь полный текст' date='11.04.19'/>
       </div>
     );
   }

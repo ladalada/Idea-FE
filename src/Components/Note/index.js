@@ -1,3 +1,3 @@
 import 'note.js'
-import 'fullnote.js'
+import '../FullNote/fullnote'
 import 'note.css'

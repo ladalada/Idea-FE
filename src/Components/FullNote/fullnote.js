@@ -1,9 +1,8 @@
-import {Component} from "react";
-import Note from "./note";
+import './fullnote.css';
+import React, { Component }  from 'react';
 
-class FullNote extends Component{
-
-    render(props){
+class Fullnote extends Component{
+    render(){
         return(
             <nav className="note active">
                 <div className="title">
@@ -38,4 +37,5 @@ class FullNote extends Component{
         );
     }
 }
-export default FullNote;
+
+export default Fullnote;

@@ -1,20 +1,24 @@
-Перед запуском проекта необходимо установить node и npm (например, отсюда https://nodejs.org/en/). 
+**Установка node и npm**
+
+Перед запуском проекта необходимо установить node и npm (например, отсюда <https://nodejs.org/en/>). 
 
 Затем устанавливаем глобально сам create-react-app:
-npm install -g create-react-app
+`npm install -g create-react-app`
 
 Проверяем:
-create-react-app --version
+`create-react-app --version`
 
 Если видите версию, то create-react-app успешно установился и можно начинать работать.
 
+**Запуск проекта**
+
 Для запуска проекта в папке проекта запускаем:
-npm start
+`npm start`
 
 Проект откроется на локалхосте на 3000 порту.
 
 И еще, в дев-среде работает livereload, то есть все изменения автоматически будут отображаться на странице без ее перезагрузки. 
-/////
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

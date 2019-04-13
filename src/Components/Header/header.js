@@ -6,7 +6,7 @@ class Header extends React.Component {
     constructor() {
         super();
 
-        this.state = {showMenu: false};
+        this.state = {show_menu: false};
 
         this.show_menu = this.show_menu.bind(this);
         this.close_menu = this.close_menu.bind(this);

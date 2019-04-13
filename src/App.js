@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Content from "./Components/Content/content";
 import Filter from "./Components/Filter/filter";
@@ -17,6 +16,6 @@ class App extends React.Component {
             </div>
         )
     }
-};
+}
 
 export default App;

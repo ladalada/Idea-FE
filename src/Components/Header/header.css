@@ -3,3 +3,87 @@
     background-color: #333333;
     border-bottom: 5px solid #FFD15C;
 }
+
+.idea_icon {
+    position: absolute;
+    /*width: 85px;*/
+    /*height: 85px;*/
+    width: 50px;
+    height: 50px;
+    /*left: 30px;*/
+    /*top: 10px;*/
+    left: 20px;
+    top: 10px;
+}
+
+.idea_title {
+    position: absolute;
+    /*left: 120px;*/
+    /*top: 10px;*/
+    /*font-size: 70px;*/
+    left: 80px;
+    top: 5px;
+    font-size: 45px;
+    font-family: "Josefin Sans", "Leelawadee UI";
+    -webkit-text-stroke: 2px #F2F2F2;
+    color: #F2F2F2;
+}
+
+.plus_icon {
+    position: absolute;
+    background: url("./icon/plus.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*right: 115px;*/
+    /*top: 30px;*/
+    width: 35px;
+    height: 35px;
+    right: 80px;
+    top: 18px;
+}
+
+.menu_button {
+    position: absolute;
+    background: url("./icon/menu.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*right: 25px;*/
+    /*top: 30px;*/
+    width: 35px;
+    height: 35px;
+    right: 20px;
+    top: 18px;
+}
+
+
+.menu_content {
+    position: absolute;
+    /*top: 115px;*/
+    /*width: 370px;*/
+    top: 75px;
+    width: 220px;
+    right: 0;
+    background-color: #FFD15C;
+}
+
+.menu_content a {
+    display: block;
+    text-decoration: none;
+    font-family: "Josefin Sans", "Leelawadee UI";
+    /*font-size: 50px;*/
+    /*padding: 40px;*/
+    font-size: 25px;
+    padding: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+.menu_content a:hover {
+    background-color: #E9BF54
+}

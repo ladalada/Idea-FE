@@ -1,6 +1,5 @@
 import './filter.css';
 import React, { Component }  from 'react';
-import App from "../../App";
 
 class Filter extends React.Component {
     render() {

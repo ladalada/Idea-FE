@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
           <Note title='First Note' text='траляляля'/>
-          <Fullnote title='First Note' fulltext='здесь полный текст' date='11.04.19'/>
+
       </div>
     );
   }

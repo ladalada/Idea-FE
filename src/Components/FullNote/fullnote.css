@@ -4,6 +4,24 @@
     border: 1px solid black;
 }
 
+.tags ul li:nth-child(5n+1){
+    color: #3696F1;
+}
+.tags ul li:nth-child(5n+2){
+    color: #9136F1;
+}
+.tags ul li:nth-child(5n+3){
+    color: #EE36F1;
+}.tags ul li:nth-child(5n+4){
+     color: #F13696;
+ }
+.tags ul li:nth-child(5n+5){
+    color: #F13639;
+}.tags ul li:nth-child(5n+6){
+     color: #F19136;
+ }
+
+
 
 .title{
     height: 60px;
@@ -64,10 +82,10 @@ ul li{
     margin-right: 2%;
 }
 #prev{
-    background: url("./icons/arrow-left.png");
+    background: url("../../icons/arrow-left.png");
 }
 #next{
-    background: url("./icons/arrow-right.png");
+    background: url("../../icons/arrow-right.png");
 }
 #prev,#next,.importance button, .action button{
     height:40px;
@@ -82,16 +100,19 @@ ul li{
     background-color: #ececec;
     margin: 0 0 0 0 !important;
 }
-.importance .firstTrue,.secondTrue,.thirdTrue{
-    background: url("./icons/lamp1.png");
+.activeLamp{
+    background: url("../../icons/lamp1.png");
     margin: 0 12px 0 12px;
 }
 
-.importance .first, .second,.third{
-    background: url("./icons/lamp2.png");
+.inactiveLamp{
+    background: url("../../icons/lamp2.png");
     margin: 0 12px 0 12px;
 }
-
+.edit{
+    position: relative;
+    left:20%;
+}
 .action .cancelActive{
     background-color:rgba(255, 0, 4, 0.63) !important;
 }
@@ -103,17 +124,11 @@ ul li{
 }
 
 .action button:first-child{
-    background: url("./icons/garbage.png");
+    background: url("../../icons/garbage.png");
 }
 .action button:last-child{
-    background: url("./icons/success.png");
+    background: url("../../icons/success.png");
 }
 .action button:last-child, .buttons button:last-child{
     margin-left: 12px;
-}
-.tags ul li:nth-child(n){
-    color: red;
-}
-.tags ul li:nth-child(2n){
-    color: green;
 }

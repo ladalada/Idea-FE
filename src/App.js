@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Note from "./Components/Note/note";
-import Fullnote from "./Components/FullNote/fullnote";
+import Note from './Components/Note'
+
+
 
 class App extends Component {
 

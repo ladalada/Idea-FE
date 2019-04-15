@@ -1,3 +1,3 @@
-import 'note.js'
-import '../FullNote/fullnote'
-import 'note.css'
+import Note from './note';
+
+export default Note;

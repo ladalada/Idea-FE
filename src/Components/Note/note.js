@@ -1,6 +1,6 @@
 import './note.css';
 import React, { Component }  from 'react';
-import Fullnote from "../FullNote/fullnote";
+import Fullnote from '../FullNote'
 
 class Note extends Component {
     constructor(props) {

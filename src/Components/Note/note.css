@@ -26,7 +26,7 @@ input[type='checkbox']{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    border: 3px solid #3696F1;
+
 }
 .title h1{
     width:100%;

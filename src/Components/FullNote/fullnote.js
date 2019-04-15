@@ -4,61 +4,79 @@ import React, { Component }  from 'react';
 class Fullnote extends Component{
     constructor(props){
         super(props);
-
-
         this.state = {
+            data:{},
+            isLoaded:false,
             newnote:props.newnote,
             tag:"",
             cancel:'cancel',
             create:'create',
-            importance:props.importance
-        };
-        let k=0;
-        for(let i of this.state.importance){
-            if(i===true){
-                k++;
-            }
-        }
-        switch (k){
-            case 1:
-                this.state.first="firstTrue";
-                this.state.second="second";
-                this.state.third="third";
-                break;
-            case 2:
-                this.state.first="firstTrue";
-                this.state.second="secondTrue";
-                this.state.third="third";
-                break;
-            case 3:
-                this.state.first="firstTrue";
-                this.state.second="secondTrue";
-                this.state.third="thirdTrue";
-                break;
-            default:
-                this.state.first="first";
-                this.state.second="second";
-                this.state.third="third";
-                break;
+            first:props.importance[0],
+            second:props.importance[1],
+            third:props.importance[2],
+            tagsEdit:false
 
-        }
-        this.handleMouseOver = this.handleMouseOver.bind(this);
-        this.handleMouseUp = this.handleMouseUp.bind(this);
+        };
+
         this.handleMOver = this.handleMOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleCreate = this.handleCreate.bind(this);
         this.handleClickTags = this.handleClickTags.bind(this);
+        this.setImportance = this.setImportance.bind(this);
+        this.handleAddTags = this.handleAddTags.bind(this);
     }
-    handleClickTags(){
-
+    handleClickTags(e){
         this.setState(state => ({
-
+            tagsEdit: !state.tagsEdit
         }));
-
+    }
+    handleAddTags(e){
+        let tags = e.target.parentNode.children[0].value.split(" ");
+        for(let i in tags){
+            if(this.state.tags.includes(tags[i])){
+                continue;
+            }
+            this.state.tags.push(tags[i])
+        }
+    }
+    setImportance(e){
+        const target = e.target;
+        const parent = e.target.parentNode;
+        let j;
+        for(let i in parent.children) {
+            if(parent.children[i]===target){
+                j=i;
+            }
+        }
+        switch (j){
+            case '0':
+                this.setState(state => ({
+                    first: true,
+                    second:false,
+                    third:false
+                }));
+                break;
+            case '1':
+                this.setState(state => ({
+                    first: true,
+                    second:  !state.second,
+                    third: false
+                    })
+                );
+               break;
+            case '2':
+                this.setState(state => ({
+                    first: true,
+                    second: true,
+                    third: !state.third
+                    })
+                );
+                break;
+        }
     }
     handleCancel(){
-        alert("Are you sure?")
+        alert("Are you sure?x`x`")
     }
     handleCreate(){
         alert("created successful!")
@@ -90,43 +108,9 @@ class Fullnote extends Component{
             }));
         }
     }
-    handleMouseUp(){
-        this.state.class = !this.state.class;
-    }
-    handleMouseOver(e){
 
-        if (e.target.className === 'first') {
-            this.setState(state => ({
-                first: "firstTrue"
-            }));
-        }
-        else if (e.target.className === 'second') {
-            this.setState(state => ({
-                second:   "secondTrue"
-            }));
-        }
-        else if (e.target.className === 'third') {
-            this.setState(state => ({
-                third:  "thirdTrue"
-            }));
-        }
-        else if (e.target.className === 'firstTrue') {
-            this.setState(state => ({
-                first: "first"
-            }));
-        }
-        else if (e.target.className === 'secondTrue') {
-            this.setState(state => ({
-                second:   "second"
-            }));
-        }
-        else if (e.target.className === 'thirdTrue') {
-            this.setState(state => ({
-                third:  "third"
-            }));
-        }
-    }
     render(){
+
         const newnote = this.state.newnote;
         if(newnote){
             this.state.fullText="";
@@ -149,16 +133,26 @@ class Fullnote extends Component{
         return(
             <nav className="note active">
                 <div className="title">
-                    <textarea placeholder="Title">{this.state.title}</textarea>
+
+                    <textarea placeholder="Title" defaultValue ={this.state.title}></textarea>
                     <h1>{this.state.date}</h1>
                 </div>
                 <div className="body">
                     <textarea className="text"
-                              placeholder="I really need to write it down...">{this.state.fullText}
+                              placeholder="I really need to write it down..." value={this.state.fullText}>
                     </textarea>
                 </div>
                 <div className="tags" onClick={this.handleClickTags} >
-                    {this.state.tag}</div>
+                    {
+                        this.state.tagsEdit ? (
+                               <div className="edit">
+                                 <textarea placeholder='#newtag' onClick='return false'>
+                                 </textarea>
+                                   <button onClick={this.handleAddTags}>add</button>
+                               </div>
+                        ) : (this.state.tag)
+                    }
+                    </div>
                 <div className="footer">
                     <div className="buttons">
                         <button id="prev"></button>
@@ -166,9 +160,9 @@ class Fullnote extends Component{
                     </div>
                     <div className="importance">
                         <div>
-                            <button className = {this.state.first} onMouseOver={this.handleMouseOver} onMouseUp={this.handleMouseUp}></button>
-                            <button className =  {this.state.second} onMouseOver={this.handleMouseOver} onMouseUp={this.handleMouseUp}></button>
-                            <button className =  {this.state.third} onMouseOver={this.handleMouseOver} onMouseUp={this.handleMouseUp}></button>
+                            <button className = {this.state.first ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
+                            <button className =  {this.state.second ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
+                            <button className =  {this.state.third ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
                         </div>
                     </div>
                     <div className="action">

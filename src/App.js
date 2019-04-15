@@ -9,7 +9,7 @@ class App extends Component {
             <div>
                 <div className="grid_one">
                     <Header/>
-                    <NotesPage/>
+                    {/*<NotesPage/>*/}
                 </div>
             </div>
         )

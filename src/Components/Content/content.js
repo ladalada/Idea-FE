@@ -1,8 +1,7 @@
 import './content.css';
 import React, { Component }  from 'react';
-import App from "../../App";
 
-class Content extends React.Component {
+class Content extends Component {
     render() {
         return (
             <div className="content">

@@ -1,3 +1,3 @@
-import 'content.js'
-import '../Content/content'
-import 'content.css'
+import Content from './content';
+
+export default Content;

@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Content from "./Components/Content/content";
-import Filter from "./Components/Filter/filter";
-import Header from "./Components/Header/header";
+import Header from "./Components/Header";
+import NotesPage from "./Components/NotesPage";
 
-class App extends React.Component {
+class App extends Component {
     render() {
         return (
             <div>
-                <div className="grid">
+                <div className="grid_one">
                     <Header/>
-                    <Content/>
-                    <Filter/>
+                    <NotesPage/>
                 </div>
             </div>
         )

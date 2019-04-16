@@ -5,19 +5,16 @@ class Fullnote extends Component{
     constructor(props){
         super(props);
         this.state = {
-            Note: props.Note,
+            Note: props.Note, //если новая - пусто, если существующаяя - передаем ее
             onSave: props.onSave,
-            newnote:props.newnote,
-            tag:"",
+            onDelete:props.onDelete,
             cancel:'cancel',
             create:'create',
-            first:props.importance[0],
-            second:props.importance[1],
-            third:props.importance[2],
+            first:props.Note.importance[0],
+            second:props.Note.importance[1],
+            third:props.Note.importance[2],
             tagsEdit:false
-
         };
-        this.handleSave = this.handleSave().bind(this);
         this.handleMOver = this.handleMOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -26,11 +23,14 @@ class Fullnote extends Component{
         this.setImportance = this.setImportance.bind(this);
         this.handleAddTags = this.handleAddTags.bind(this);
     }
+
+    //Обработка события изменения списка тегов
     handleClickTags(e){
         this.setState(state => ({
             tagsEdit: !state.tagsEdit
         }));
     }
+    //добавление тегов
     handleAddTags(e){
         let tags = e.target.parentNode.children[0].value.split(" ");
         for(let i in tags){
@@ -41,9 +41,7 @@ class Fullnote extends Component{
         }
     }
 
-    handleSave(){
-        this.props.onSave(this.state.Note);
-    }
+//изменение важности заметки
     setImportance(e){
         const target = e.target;
         const parent = e.target.parentNode;
@@ -79,12 +77,21 @@ class Fullnote extends Component{
                 break;
         }
     }
+
+    //удаление заметки
     handleCancel(){
-        alert("Are you sure?x`x`")
+        let result = confirm("Are you sure?x`x`");
+        if(result)
+        this.props.onDelete(this.state.Note.id);
     }
+
+    //создание заметки
     handleCreate(){
+        this.props.onSave(this.state.Note); //обращаемся к FullNoteContainer
         alert("created successful!")
     }
+
+    //наведение мыши на значки
     handleMOver(e) {
 
         if (e.target.className === 'cancel') {
@@ -114,22 +121,22 @@ class Fullnote extends Component{
     }
 
     render(){
+        let note = this.state.Note;
 
-        const newnote = this.state.newnote;
-        if(newnote){
-            this.state.fullText="";
-            this.state.tags=[];
-            this.state.title ="";
-            this.state.date="";
-            this.state.tag =  <textarea placeholder="#Tags"></textarea>
+        //если новая заметка, создаем поля, создаем поле для добавления тегов
+        if(Object.keys(note).length===0){
+            note.id = 'default'; //автоматически заполняется
+            note.fullText="";
+            note.tags=[];
+            note.title = "";
+            note.date=null;
+            note.importance = [true,false,false];
+            this.state.tag = <textarea placeholder="#Tags"></textarea>
+            this.state.Note = note;
         }
+        //если обновляем старую заметку, здесь только формируется список тегов
         else{
-            this.state.title=this.props.title;
-            this.state.fullText=this.props.fullText;
-            this.state.date=this.props.date;
-            this.state.tags=this.props.tags;
-
-            this.state.tag = <ul>{this.state.tags.map((tag) =>
+            this.state.tag = <ul>{this.state.Note.tags.map((tag) =>
                 <li key={tag.toString()}>#{tag}</li>)}
             </ul>
         }
@@ -137,13 +144,12 @@ class Fullnote extends Component{
         return(
             <nav className="note active">
                 <div className="title">
-
-                    <textarea placeholder="Title" defaultValue ={this.state.title}></textarea>
-                    <h1>{this.state.date}</h1>
+                    <textarea placeholder="Title" defaultValue ={this.state.Note.title}></textarea>
+                    <h1>{this.state.Note.date}</h1>
                 </div>
                 <div className="body">
                     <textarea className="text"
-                              placeholder="I really need to write it down..." value={this.state.fullText}>
+                              placeholder="I really need to write it down..." value={this.state.Note.fullText}>
                     </textarea>
                 </div>
                 <div className="tags" onClick={this.handleClickTags} >

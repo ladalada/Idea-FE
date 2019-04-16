@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import URL from '/./Constants'
 class FullNoteContainer extends Component{
 
     constructor(props){
@@ -13,7 +14,7 @@ class FullNoteContainer extends Component{
     //update Note (from FullNote)
     onSave() {
             //POST
-            fetch("http://localhost:8083/note/", {
+            fetch(URL+"/note", {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: {
@@ -27,7 +28,7 @@ class FullNoteContainer extends Component{
     //delete Note
     onDelete(id){
         //DELETE
-        fetch("http://localhost:8083/note/"+id,
+        fetch(URL+"/note/${id}",
             {
                 method: 'delete'
             }).then((error) =>{
@@ -42,14 +43,13 @@ class FullNoteContainer extends Component{
             this.state.Note = {};
         }
         else {
-            fetch("http://localhost:8083/note/" + this.state.id)
+            fetch(URL + "/${id)")
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({Note: response});
                 })
                 .then((error) => {
-                    this.setState({false: true});
-                    this.setState({error});
+                    this.setState({false: true},{error});
                 })
         }
     }

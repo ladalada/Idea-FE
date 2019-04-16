@@ -1,9 +1,13 @@
-.note{
+.fullnote{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+.noteBody{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    width:100%;
 }
-
 .tags ul li:nth-child(5n+1){
     color: #3696F1;
 }
@@ -37,7 +41,7 @@
      margin:2%;
      width:90%;
      display: flex;
-     flex-direction: column;
+     flex-direction: row;
      border: 1px solid black;
  }
 .active h1{
@@ -81,13 +85,35 @@ ul li{
 .action{
     margin-right: 2%;
 }
-#prev{
-    background: url("../../icons/arrow-left.png");
+.title .date{
+    width:100px;
 }
-#next{
-    background: url("../../icons/arrow-right.png");
+
+#back{
+    background: url("../../icons/black_arrow.png");
+    background-size: 100% 100% !important;
+    height: 40px;
+    width: 40px;
+    border: none;
 }
-#prev,#next,.importance button, .action button{
+#prev button,#next button{
+    position: relative;
+    top:150px;
+    width: 60px;
+    height:70px;
+    background-size: 100% 100% !important;
+    outline: none !important;
+    border: none;
+}
+#prev>button{
+    background: url("../../icons/prev.png");
+    margin-left: 8%;
+}
+#next>button{
+    background: url("../../icons/next.png");
+    margin-right: 8%;
+}
+.importance button, .action button{
     height:40px;
     width:40px;
     background-size: 100% 100% !important;

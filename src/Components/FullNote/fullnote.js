@@ -6,15 +6,12 @@ class Fullnote extends Component{
         super(props);
         this.state = {
             Note: props.Note, //если новая - пусто, если существующаяя - передаем ее
-            onSave: props.onSave,
-            onDelete:props.onDelete,
             cancel:'cancel',
             create:'create',
-            first:props.Note.importance[0],
-            second:props.Note.importance[1],
-            third:props.Note.importance[2],
+            importance:props.Note.importance,
             tagsEdit:false
         };
+
         this.handleMOver = this.handleMOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -22,8 +19,17 @@ class Fullnote extends Component{
         this.handleClickTags = this.handleClickTags.bind(this);
         this.setImportance = this.setImportance.bind(this);
         this.handleAddTags = this.handleAddTags.bind(this);
+        this.getNextNote = this.getNextNote.bind(this);
+        this.getPrevNote = this.getPrevNote.bind(this);
     }
+    //->
+    getNextNote(e) {
+        
+    }
+    //<-
+    getPrevNote(e){
 
+    }
     //Обработка события изменения списка тегов
     handleClickTags(e){
         this.setState(state => ({
@@ -53,25 +59,19 @@ class Fullnote extends Component{
         }
         switch (j){
             case '0':
-                this.setState(state => ({
-                    first: true,
-                    second:false,
-                    third:false
-                }));
+                this.setState({
+                    importance : 1
+                });
                 break;
             case '1':
                 this.setState(state => ({
-                    first: true,
-                    second:  !state.second,
-                    third: false
+                    importance : 2
                     })
                 );
                break;
             case '2':
                 this.setState(state => ({
-                    first: true,
-                    second: true,
-                    third: !state.third
+                    importance : 3
                     })
                 );
                 break;
@@ -80,7 +80,7 @@ class Fullnote extends Component{
 
     //удаление заметки
     handleCancel(){
-        let result = confirm("Are you sure?x`x`");
+        const result = window.confirm("Are you sure?");
         if(result)
         this.props.onDelete(this.state.Note.id);
     }
@@ -122,7 +122,6 @@ class Fullnote extends Component{
 
     render(){
         let note = this.state.Note;
-
         //если новая заметка, создаем поля, создаем поле для добавления тегов
         if(Object.keys(note).length===0){
             note.id = 'default'; //автоматически заполняется
@@ -133,16 +132,21 @@ class Fullnote extends Component{
             note.importance = [true,false,false];
             this.state.tag = <textarea placeholder="#Tags"></textarea>
             this.state.Note = note;
+            this.state.isNew = true; //для скрытия стрелочек
         }
         //если обновляем старую заметку, здесь только формируется список тегов
         else{
+            this.state.isNew = false; //для отображения стрелочек перехода к другой заметке
             this.state.tag = <ul>{this.state.Note.tags.map((tag) =>
                 <li key={tag.toString()}>#{tag}</li>)}
             </ul>
         }
 
         return(
-            <nav className="note active">
+
+            <nav className="fullnote active">
+                {this.state.isNew ? ( null ):(<div id="prev"><button onClick={this.getPrevNote}></button></div>)}
+                <div className="noteBody">
                 <div className="title">
                     <textarea placeholder="Title" defaultValue ={this.state.Note.title}></textarea>
                     <h1>{this.state.Note.date}</h1>
@@ -165,14 +169,13 @@ class Fullnote extends Component{
                     </div>
                 <div className="footer">
                     <div className="buttons">
-                        <button id="prev"></button>
-                        <button id="next"></button>
+                        <button id="back"></button>
                     </div>
                     <div className="importance">
                         <div>
-                            <button className = {this.state.first ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
-                            <button className =  {this.state.second ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
-                            <button className =  {this.state.third ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
+                            <button className = {(this.state.importance>=1) ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
+                            <button className =  {(this.state.importance>=2) ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
+                            <button className =  {(this.state.importance==3) ? 'activeLamp' : 'inactiveLamp'} onClick={this.setImportance}></button>
                         </div>
                     </div>
                     <div className="action">
@@ -186,6 +189,8 @@ class Fullnote extends Component{
                         ></button>
                     </div>
                 </div>
+                </div>
+                {this.state.isNew ? (null) :(<div id="next"><button onClick={this.getNextNote}></button></div>)}
             </nav>
         );
     }

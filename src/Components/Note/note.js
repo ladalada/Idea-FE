@@ -19,7 +19,7 @@ class Note extends Component {
         }
         else {
             this.setState({
-                result: <Fullnote newnote={true} importance={[true, true, false]}/>
+                result: <Fullnote Note = {{}} onSave={false}/>
             });
         }
     }
@@ -32,10 +32,10 @@ class Note extends Component {
         }
         else {
             this.setState({
-                result: <Fullnote newnote={false} title='First Note'
-                                  fullText='Необходимо до 22.04.2019 доделать проект!' date='11.04.19'
-                                  tags={['работа', 'увлечения', 'срочно']
-                                  } importance={[true, true, false]}/>
+                result: <Fullnote Note = {{title:'First Note',
+                                  fullText:'Необходимо до 22.04.2019 доделать проект!', date:'11.04.19',
+                                  tags:['работа', 'увлечения', 'срочно'],
+                 importance:3}} onSave={false}/>
             });
         }
     }

@@ -2,6 +2,14 @@ import './note.css';
 import React, { Component }  from 'react';
 import Fullnote from '../FullNote'
 
+const Note2 ={
+    id : 'new', //автоматически заполняется
+    title:"",
+    fullText:"",
+    tags:[],
+    date:null,
+    importance:1
+};
 class Note extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +27,7 @@ class Note extends Component {
         }
         else {
             this.setState({
-                result: <Fullnote Note = {{}} onSave={false}/>
+                result: <Fullnote Note = {Note2} onSave={false}/>
             });
         }
     }
@@ -32,7 +40,7 @@ class Note extends Component {
         }
         else {
             this.setState({
-                result: <Fullnote Note = {{title:'First Note',
+                result: <Fullnote Note = {{id:"1",title:'First Note',
                                   fullText:'Необходимо до 22.04.2019 доделать проект!', date:'11.04.19',
                                   tags:['работа', 'увлечения', 'срочно'],
                  importance:3}} onSave={false}/>

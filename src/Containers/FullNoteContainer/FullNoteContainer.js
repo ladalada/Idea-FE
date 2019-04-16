@@ -1,5 +1,15 @@
 import React, { Component }  from 'react';
 import URL from '/./Constants'
+
+
+const Note ={
+    id : 'new', //автоматически заполняется
+    title:"",
+    fullText:"",
+    tags:[],
+    date:null,
+    importance:1
+};
 class FullNoteContainer extends Component{
 
     constructor(props){
@@ -14,7 +24,7 @@ class FullNoteContainer extends Component{
     //update Note (from FullNote)
     onSave() {
             //POST
-            fetch(URL+"/note", {
+            fetch(`${URL}note`, {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: {
@@ -28,7 +38,7 @@ class FullNoteContainer extends Component{
     //delete Note
     onDelete(id){
         //DELETE
-        fetch(URL+"/note/${id}",
+        fetch(`${URL}note/${id}`,
             {
                 method: 'delete'
             }).then((error) =>{
@@ -39,11 +49,11 @@ class FullNoteContainer extends Component{
 
 
     componentDidMount() {
-        if(this.state.id.length===0){
-            this.state.Note = {};
+        if(this.state.id==='new'){
+            this.state.Note = Note;
         }
         else {
-            fetch(URL + "/${id)")
+            fetch(`${URL}${id}`)
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({Note: response});

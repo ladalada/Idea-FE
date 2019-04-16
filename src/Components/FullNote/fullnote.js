@@ -1,6 +1,7 @@
 import './fullnote.css';
 import React, { Component }  from 'react';
 
+
 class Fullnote extends Component{
     constructor(props){
         super(props);
@@ -24,7 +25,7 @@ class Fullnote extends Component{
     }
     //->
     getNextNote(e) {
-        
+
     }
     //<-
     getPrevNote(e){
@@ -40,10 +41,10 @@ class Fullnote extends Component{
     handleAddTags(e){
         let tags = e.target.parentNode.children[0].value.split(" ");
         for(let i in tags){
-            if(this.state.tags.includes(tags[i])){
+            if( this.state.Note.tags.includes(tags[i])){
                 continue;
             }
-            this.state.tags.push(tags[i])
+            this.state.Note.tags.push(tags[i])
         }
     }
 
@@ -57,25 +58,10 @@ class Fullnote extends Component{
                 j=i;
             }
         }
-        switch (j){
-            case '0':
-                this.setState({
-                    importance : 1
-                });
-                break;
-            case '1':
-                this.setState(state => ({
-                    importance : 2
-                    })
-                );
-               break;
-            case '2':
-                this.setState(state => ({
-                    importance : 3
-                    })
-                );
-                break;
-        }
+        this.setState({
+            importance : ++j
+        });
+
     }
 
     //удаление заметки
@@ -122,30 +108,13 @@ class Fullnote extends Component{
 
     render(){
         let note = this.state.Note;
-        //если новая заметка, создаем поля, создаем поле для добавления тегов
-        if(Object.keys(note).length===0){
-            note.id = 'default'; //автоматически заполняется
-            note.fullText="";
-            note.tags=[];
-            note.title = "";
-            note.date=null;
-            note.importance = [true,false,false];
-            this.state.tag = <textarea placeholder="#Tags"></textarea>
-            this.state.Note = note;
-            this.state.isNew = true; //для скрытия стрелочек
-        }
-        //если обновляем старую заметку, здесь только формируется список тегов
-        else{
-            this.state.isNew = false; //для отображения стрелочек перехода к другой заметке
-            this.state.tag = <ul>{this.state.Note.tags.map((tag) =>
-                <li key={tag.toString()}>#{tag}</li>)}
-            </ul>
-        }
+        let tags = note.tags;
+        alert(this.state.Note.id)
 
         return(
 
             <nav className="fullnote active">
-                {this.state.isNew ? ( null ):(<div id="prev"><button onClick={this.getPrevNote}></button></div>)}
+                {this.state.Note.id==='new' ? ( null ):(<div id="prev"><button onClick={this.getPrevNote}></button></div>)}
                 <div className="noteBody">
                 <div className="title">
                     <textarea placeholder="Title" defaultValue ={this.state.Note.title}></textarea>
@@ -164,7 +133,9 @@ class Fullnote extends Component{
                                  </textarea>
                                    <button onClick={this.handleAddTags}>add</button>
                                </div>
-                        ) : (this.state.tag)
+                        ) : (this.state.Note.tags.length===0 ? (<textarea placeholder="#Tags"></textarea>):(<ul>{this.state.Note.tags.map((tag) =>
+                            <li key={tag.toString()}>#{tag}</li>)}
+                        </ul>))
                     }
                     </div>
                 <div className="footer">
@@ -190,7 +161,7 @@ class Fullnote extends Component{
                     </div>
                 </div>
                 </div>
-                {this.state.isNew ? (null) :(<div id="next"><button onClick={this.getNextNote}></button></div>)}
+                {this.state.Note.id==='new' ? ( null ):(<div id="next"><button onClick={this.getPrevNote}></button></div>)}
             </nav>
         );
     }

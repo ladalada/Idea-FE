@@ -5,8 +5,8 @@ class Fullnote extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data:{},
-            isLoaded:false,
+            Note: props.Note,
+            onSave: props.onSave,
             newnote:props.newnote,
             tag:"",
             cancel:'cancel',
@@ -17,7 +17,7 @@ class Fullnote extends Component{
             tagsEdit:false
 
         };
-
+        this.handleSave = this.handleSave().bind(this);
         this.handleMOver = this.handleMOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -39,6 +39,10 @@ class Fullnote extends Component{
             }
             this.state.tags.push(tags[i])
         }
+    }
+
+    handleSave(){
+        this.props.onSave(this.state.Note);
     }
     setImportance(e){
         const target = e.target;

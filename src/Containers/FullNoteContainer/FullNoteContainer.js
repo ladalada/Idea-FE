@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import URL from '/./Constants'
-import FullNote from '/./fullnote'
+import FullNote from '/././FullNote'
 
 const Note ={
     id : 'new', //автоматически заполняется

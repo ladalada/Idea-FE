@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Page404 from './Components/Page404'
 
-class App extends Component {
-  render() {
+
+function App() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+      <Router>
+          <Switch>
+              <Route path="/login" component={Page404} />
+              <Route path="/signup" component={Page404} />
+              <Route path="/notes" component={Page404} />
+              <Route path="/notes/:id" component={Page404} />
+              <Route path="/" component={Page404} />
+          </Switch>
+      </Router>
+  );
 }
 
 export default App;

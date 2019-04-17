@@ -139,12 +139,13 @@ ul li{
     position: relative;
     left:20%;
 }
-.action .cancelActive{
+.cancel:hover{
     background-color:rgba(255, 0, 4, 0.63) !important;
 }
-.action .createActive{
+.create:hover{
     background-color:rgba(0, 219, 7, 1) !important;
 }
+
 .footer {
     margin-bottom: 2%;
 }

@@ -7,14 +7,10 @@ class Fullnote extends Component{
         super(props);
         this.state = {
             Note: props.Note, //если новая - пусто, если существующаяя - передаем ее
-            cancel:'cancel',
-            create:'create',
             importance:props.Note.importance,
             tagsEdit:false
         };
 
-        this.handleMOver = this.handleMOver.bind(this);
-        this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleCreate = this.handleCreate.bind(this);
         this.handleClickTags = this.handleClickTags.bind(this);
@@ -77,39 +73,9 @@ class Fullnote extends Component{
         alert("created successful!")
     }
 
-    //наведение мыши на значки
-    handleMOver(e) {
-
-        if (e.target.className === 'cancel') {
-            this.setState(state => ({
-                cancel: 'cancelActive'
-            }));
-        }
-        else if (e.target.className === 'create') {
-
-            this.setState(state => ({
-                create: 'createActive'
-            }));
-        }
-    }
-    handleMouseOut(e){
-
-        if (e.target.className === 'cancelActive') {
-            this.setState(state => ({
-                cancel: 'cancel'
-            }));
-        }
-        else if (e.target.className === 'createActive') {
-            this.setState(state => ({
-                create: 'create'
-            }));
-        }
-    }
-
     render(){
         let note = this.state.Note;
         let tags = note.tags;
-        alert(this.state.Note.id)
 
         return(
 
@@ -150,12 +116,10 @@ class Fullnote extends Component{
                         </div>
                     </div>
                     <div className="action">
-                        <button className={this.state.cancel} onMouseOver={this.handleMOver}
-                                onMouseOut={this.handleMouseOut}
+                        <button className='cancel'
                                 onClick={this.handleCancel}
                         ></button>
-                        <button className={this.state.create} onMouseOver={this.handleMOver}
-                                onMouseOut={this.handleMouseOut}
+                        <button className='create'
                                 onClick={this.handleCreate}
                         ></button>
                     </div>

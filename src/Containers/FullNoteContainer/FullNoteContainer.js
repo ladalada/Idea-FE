@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import URL from '/./Constants'
-
+import FullNote from '/./fullnote'
 
 const Note ={
     id : 'new', //автоматически заполняется
@@ -65,6 +65,8 @@ class FullNoteContainer extends Component{
     }
 
     render(){
-        <Fullnote Note={this.state.Note} onSave={this.onSave}/>
+        return (
+            <FullNote Note={this.state.Note} onSave={this.onSave}/>
+        )
     }
 }

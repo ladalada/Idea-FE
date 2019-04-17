@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from "./Components/Header";
-import LogIn from "./Components/LogIn";
-import Signup from "./Components/SignUp";
+import Form from "./Components/Form";
 import NotesPage from "./Components/NotesPage";
+import SignUpContainer from './Containers/SignUpContainer';
 
 
 class App extends Component {
     render() {
         return (
             <div>
-                {/*<LogIn/>*/}
-                <Signup/>
+                <Form/>
                 <div className="grid_one">
                     <Header/>
                     {/*<NotesPage/>*/}

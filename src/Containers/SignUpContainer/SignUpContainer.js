@@ -10,8 +10,8 @@ const new_user = {
 
 class SignUpContainer extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.sign_up = this.sign_up.bind(this);
     }

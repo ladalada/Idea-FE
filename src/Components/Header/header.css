@@ -23,7 +23,7 @@
 
 .plus_icon {
     position: absolute;
-    background: url("./icon/plus.png");
+    background: url("../../Icons/plus.png");
     background-size: cover;
     border: none;
     cursor: pointer;
@@ -36,7 +36,7 @@
 
 .menu_button {
     position: absolute;
-    background: url("./icon/menu.png");
+    background: url("../../Icons/menu.png");
     background-size: cover;
     border: none;
     cursor: pointer;

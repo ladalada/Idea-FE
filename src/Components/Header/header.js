@@ -2,7 +2,30 @@ import './header.css';
 import React, { Component }  from 'react';
 import idea from '../../Icons/idea.png';
 
-class Header extends Component {
+class Header extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {show_menu: false};
+
+        this.show_menu = this.show_menu.bind(this);
+        this.close_menu = this.close_menu.bind(this);
+    }
+
+    show_menu(event) {
+        event.preventDefault();
+
+        this.setState({ show_menu: true }, () => {
+            document.addEventListener('click', this.close_menu);
+        });
+    }
+
+    close_menu() {
+        this.setState({show_menu: false}, () => {
+            document.removeEventListener('click', this.close_menu);
+        });
+    }
+
    render() {
         return (
             <div className="header">
@@ -15,10 +38,10 @@ class Header extends Component {
                 {
                     this.state.show_menu ? (
                     <div className="menu_content">
-                        <a href="#"> Username </a>
-                        <a href="#"> Something </a>
-                        <a href="#"> Something </a>
-                        <a href="#"> Sign out </a>
+                        <a> Username </a>
+                        <a> Something </a>
+                        <a> Something </a>
+                        <a> Sign out </a>
                     </div>
                     ) : (null)
                 }

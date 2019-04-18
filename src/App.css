@@ -1,14 +1,11 @@
-.grid {
+.grid_one {
   display: grid;
-  width: 100vw;
-  height: 100vh;
-  grid-template-columns: 245px;
-  /*350px*/
-  grid-template-rows: 75px;
-  /*115*/
-  grid-template-areas:
-          "header header"
-          "filter content";
-}
 
+  width: 100vw;
+
+  grid-template-rows: 12vh;
+  grid-template-areas:
+          "header"
+          "notespage";
+}
 

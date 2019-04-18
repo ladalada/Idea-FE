@@ -1,3 +1,3 @@
-import 'filter.js'
-import '../Filter/filter'
-import 'filter.css'
+import Filter from './filter';
+
+export default Filter;

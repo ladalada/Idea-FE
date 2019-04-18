@@ -1,13 +1,13 @@
-import './filter.css';
 import React, { Component }  from 'react';
 
-class Filter extends Component {
+class Page404 extends Component {
     render() {
         return (
-            <div className="filter">
+            <div>
+                <h2>Page404</h2>
             </div>
         )
     }
 };
 
-export default Filter;
+export default Page404;

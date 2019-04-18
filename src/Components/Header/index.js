@@ -1,3 +1,3 @@
-import 'header.js'
-import '../Header/header'
-import 'header.css'
+import Header from './header';
+
+export default Header;

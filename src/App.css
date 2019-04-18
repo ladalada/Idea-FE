@@ -1,0 +1,10 @@
+.grid_one {
+  display: grid;
+
+  width: 100vw;
+
+  grid-template-rows: 12vh;
+  grid-template-areas:
+          "header"
+          "notespage";
+}

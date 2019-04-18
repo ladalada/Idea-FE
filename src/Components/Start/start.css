@@ -1,17 +1,17 @@
-.idea_icon {
+.big_idea_icon {
     position: absolute;
-    height: 50vh;
-    left: 20vw;
-    top: 15vh;
+    height: 51.5vh;
+    left: 17vw;
+    top: 16vh;
 }
 
-.idea_title {
+.big_idea_title {
     position: absolute;
-    left: 26vw;
-    top: 66vh;
+    left: 22vw;
+    top: 67vh;
 
     font-family: "Josefin Sans", "Leelawadee UI";
-    font-size: 14vh;
+    font-size: 15vh;
 
     color: #F2F2F2;
     -webkit-text-stroke: 3px #F2F2F2;
@@ -19,11 +19,11 @@
 
 .statement {
     position: absolute;
-    left: 55vw;
+    left: 57vw;
     top: 33vh;
 
     font-family: "Josefin Sans", "Leelawadee UI";
-    font-size: 9vh;
+    font-size: 10vh;
 
     line-height: 11vh;
     text-align: center;
@@ -33,7 +33,7 @@
 
 .sign_up {
     position: absolute;
-    right: 2vw;
+    right: 1vw;
     top: 2vh;
 
     font-family: "Josefin Sans", "Leelawadee UI";
@@ -79,9 +79,4 @@
     height: 6vh;
     left: 2vw;
     top: 2vh;
-}
-
-.answer .idea_title{
-    height: 70vh;
-
 }

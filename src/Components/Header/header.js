@@ -33,7 +33,6 @@ class Header extends React.Component {
                 <img src={idea} className="idea_icon"/>
                 <div className="idea_title"> Idea </div>
                 <button className="plus_icon"/>
-
                 <button className="menu_button" onClick={this.show_menu}/>
                 {
                     this.state.show_menu ? (

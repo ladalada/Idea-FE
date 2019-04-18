@@ -10,8 +10,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                {/*<SignUpContainer/>*/}
-                <LogInContainer/>
+                <SignUpContainer/>
+                {/*<LogInContainer/>*/}
                 <div className="grid_one">
                     <Header/>
                 </div>

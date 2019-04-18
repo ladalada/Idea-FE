@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: Josefin Sans, sans-serif;
+    font-style: normal;
+    vertical-align: baseline;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary, figcaption, hgroup, menu {
+
+    display: block; /* HTML5 display-role reset for older browsers */
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+
+    list-style: none;
+}
+
+img,
+object,
+embed {
+
+    max-width: 100%;
+}
+
+select, input {
+
+    font: 99% sans-serif;
+}
+
+button, input, select, textarea, figure, form {
+
+    margin: 0;
+}
+
+[hidden] {
+
+    display: none;
+}
+
+html {
+
+    font-size: 100%; /* Correct text resizing oddly in IE 6/7 when body `font-size` is set using `em` units. */
+    box-sizing: border-box;
+    overflow-y: scroll; /*add scroll */
+}
+
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+
+    border: 0; /*Remove inner padding and border in Firefox 3+.*/
+    padding: 0;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    box-sizing: border-box; /* Address box sizing set to content-box in IE 8/9 */
+    padding: 0; /* Remove excess padding in IE 8/9. */
+    *height: 13px; /*Remove excess padding in IE 7.  */
+    *width: 13px;
+}
+
+textarea {
+
+    overflow: auto; /*Remove default vertical scrollbar in IE 6/7/8/9.*/
+    vertical-align: top; /*Improve readability and alignment in all browsers*/
+    resize: vertical;
+}
+
+button,
+input,
+select,
+textarea {
+
+    font-size: 100%; /* Correct font size not being inherited in all browsers */
+    margin: 0; /* Address margins set differently in IE 6/7, Firefox 3+, Safari 5,   and Chrome. */
+    vertical-align: baseline; /* Improve appearance and consistency in all browsers*/
+    *vertical-align: middle; /* Improve appearance and consistency in all browsers */
+}
+
+button,
+input {
+
+    line-height: normal; /* Address Firefox 3+ setting `line-height` on `input` using `!important` in the UA stylesheet.*/
+}
+
+a:active,
+a:hover
+:focus  {    /* make sure to set some focus styles for accessibility */
+
+    outline: 0; /*Improve readability when focused and also mouse hovered in all browsers*/
+}
+
+a:focus {
+
+    outline: thin dotted; /*Address `outline` inconsistency between Chrome and other browsers*/
+}
+
+img {
+
+    border: 0; /* Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3. */
+    -ms-interpolation-mode: bicubic; /* Improve image quality when scaled in IE 7.*/
+}
+
+
+/* All other form control elements do not inherit `text-transform` values.
+  Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+  Correct `select` style inheritance in Firefox 4+ and Opera.*/
+button,
+select {
+
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+    *overflow: visible; /* Remove inner spacing in IE 7 without affecting normal text inputs. Known issue: inner spacing remains in IE 6.*/
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    box-sizing: border-box; /* Address box sizing set to content-box in IE 8/9 */
+    padding: 0; /* Remove excess padding in IE 8/9. */
+    *height: 13px; /* Remove excess padding in IE 7.*/
+    *width: 13px; /* Remove excess padding in IE 7. */
+}
+
+/*cursor */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+
+    cursor: default; /* Re-set default cursor for disabled elements*/
+}
+
+
+
+
+
+
+
+
+

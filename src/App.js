@@ -5,21 +5,23 @@ import Page404 from './Components/Page404'
 import Header from "./Components/Header";
 import NotesPage from "./Components/NotesPage";
 
-function App() {
-    return (
-        <Router>
-            <div className="grid_one">
-                <Header/>
-            </div>
-            <Switch>
-                <Route path="/login" component={Page404} />
-                <Route path="/signup" component={Page404} />
-                <Route path="/notes" component={NotesPage} />
-                <Route path="/notes/:id" component={Page404} />
-                <Route path="/" component={Page404} />
-            </Switch>
-        </Router>
-    );
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="grid_one">
+                    <Header/>
+                </div>
+                <Switch>
+                    <Route path="/login" component={Page404}/>
+                    <Route path="/signup" component={Page404}/>
+                    <Route path="/notes" component={NotesPage}/>
+                    <Route path="/notes/:id" component={Page404}/>
+                    <Route path="/" component={Page404}/>
+                </Switch>
+            </Router>
+        );
+    }
 }
 
 export default App;

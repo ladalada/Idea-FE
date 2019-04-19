@@ -8,7 +8,6 @@ import NotesPage from "./Components/NotesPage";
 
 class App extends Component {
     render() {
-        alert("")
         return (
             <Router>
                 <div className="grid_one">

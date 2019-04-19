@@ -1,14 +1,15 @@
 import React, { Component }  from 'react';
-import URL from '../../Constants'
+
 import FullNote from '../../Components/FullNote'
 
+const URL = 'http://localhost:8083/'
 const Note ={
     id : 'new', //автоматически заполняется
     title:"",
-    fullText:"",
+    text:"",
     tags:[],
-    date:null,
-    importance:1
+    creationDate:null,
+    priority:1
 };
 class FullNoteContainer extends Component{
 
@@ -22,20 +23,20 @@ class FullNoteContainer extends Component{
     }
 
     //update Note (from FullNote)
-    onSave() {
+    onSave(Note) {
+        console.log(Note)
             //POST
             fetch(`${URL}note`, {
-                method: 'post',
+                method: 'put',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(this.state.Note)
-
+                body: JSON.stringify(Note)
             }).then((error) => {
                 console.log(error);
-
             })
     }
     //delete Note
     onDelete(id){
+        alert("")
         //DELETE
         fetch(`${URL}note/${id}`,
             {
@@ -53,21 +54,33 @@ class FullNoteContainer extends Component{
             this.state.Note = Note;
         }
         else {
-            fetch(`${URL}${this.state.id}`)
+            fetch(`${URL}note/${this.state.id}`)
                 .then((response) => response.json())
                 .then((response) => {
-                    this.setState({Note: response});
+                   this.setState({
+                      Note: response
+                   });
                 })
                 .then((error) => {
-                    this.setState({false: true},{error});
+                    this.setState({false: true});
                 })
+
         }
+
     }
 
-    render(){
-        return (
-            <FullNote Note={this.state.Note} onSave={this.onSave}/>
-        )
+    render() {
+        if(this.state.Note!=undefined) {
+            return (
+                <FullNote Note={this.state.Note} onSave={this.onSave} onDelete={this.onDelete}/>
+            )
+        }
+        else{
+            return(
+                <h1>Waiting please...</h1>
+            )
+        }
+
     }
 }
 export default FullNoteContainer;

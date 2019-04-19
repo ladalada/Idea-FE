@@ -19,7 +19,7 @@ class SignUpContainer extends Component {
 
     sign_up() {
         //post
-        fetch(`http://localhost:8083/user`, {
+        fetch('http://localhost:8083/user', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body:

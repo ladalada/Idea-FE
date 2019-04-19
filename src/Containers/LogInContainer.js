@@ -3,7 +3,6 @@ import URL from '../Constants/index'; //настроить URL
 import Form from '../Components/Form';
 
 const user = {
-    id: 3, //исправить на аутозаполнение!
     username: '',
     password: ''
 };
@@ -18,11 +17,16 @@ class LogInContainer extends Component {
         this.log_in = this.log_in.bind(this);
     }
 
-    //добавить поиск по имени!!!
     log_in() {
-        fetch(`http://localhost:8083/user/${user.id}`, {
+        //get
+        fetch(`http://localhost:8083/user/${user.username}`, {
             method: 'get',
             headers: {'Content-Type': 'application/json'}
+        }).then(function(response) {
+            response.json().then(function(data) {
+                if (user.password === data.password) console.log('log in');
+                if (user.password !== data.password) alert('Wrong password or username!');
+            });
         }).then((error) => {
             console.log(error)
         });

@@ -23,13 +23,15 @@ class LogInContainer extends Component {
             method: 'get',
             headers: {'Content-Type': 'application/json'}
         }).then(function(response) {
-            response.json().then(function(data) {
-                if (user.password === data.password) console.log('log in');
-                if (user.password !== data.password) alert('Wrong password or username!');
-            });
-        }).then((error) => {
-            console.log(error)
+            console.log(response);
+                response.json().then(function (data) {
+                    if (user.password === data.password) console.log('log in');
+                    if (user.password !== data.password) alert('Wrong password!');
+            })
+        }).catch((error) => {
+            console.log(error);
         });
+
     }
 
     render() {

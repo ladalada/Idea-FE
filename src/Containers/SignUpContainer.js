@@ -28,10 +28,8 @@ class SignUpContainer extends Component {
                     "userName": user.username,
                     "password": user.password,
                 })
-
-        }).then((error) => {
+        }).catch((error) => {
             console.log(error);
-
         });
 
         alert(user.username + " " + user.password);

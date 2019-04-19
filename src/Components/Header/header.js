@@ -1,6 +1,8 @@
 import './header.css';
 import React, { Component }  from 'react';
 import idea from '../../Icons/idea.png';
+import { BrowserRouter, Link } from 'react-router-dom';
+
 
 class Header extends React.Component {
     constructor() {
@@ -32,7 +34,8 @@ class Header extends React.Component {
 
                 <img src={idea} className="idea_icon"/>
                 <div className="idea_title"> Idea </div>
-                <button className="plus_icon"/>
+                <Link to='/note/new'><button className="plus_icon"/></Link>
+          
                 <button className="menu_button" onClick={this.show_menu}/>
                 {
                     this.state.show_menu ? (

@@ -1,0 +1,14 @@
+.notespage {
+    grid-area: notespage;
+}
+
+.grid_two {
+    display: grid;
+
+    width: 100vw;
+    height: 88vh;
+
+    grid-template-columns: 17.9vw;
+    grid-template-areas:
+            "filter content";
+}

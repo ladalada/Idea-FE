@@ -1,6 +1,6 @@
 import './fullnote.css';
 import React, { Component }  from 'react';
-
+import { Link } from 'react-router-dom';
 
 class Fullnote extends Component{
     constructor(props){
@@ -106,7 +106,7 @@ class Fullnote extends Component{
                     </div>
                 <div className="footer">
                     <div className="buttons">
-                        <button id="back"></button>
+                        <Link to='/'><button id="back"/></Link>
                     </div>
                     <div className="importance">
                         <div>

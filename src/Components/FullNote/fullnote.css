@@ -4,6 +4,7 @@
     width:100%;
 }
 .noteBody{
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -90,7 +91,7 @@ ul li{
 }
 
 #back{
-    background: url("../../icons/black_arrow.png");
+    background: url("../../Icons/black_arrow.png");
     background-size: 100% 100% !important;
     height: 40px;
     width: 40px;
@@ -106,11 +107,11 @@ ul li{
     border: none;
 }
 #prev>button{
-    background: url("../../icons/prev.png");
+    background: url("../../Icons/prev.png");
     margin-left: 8%;
 }
 #next>button{
-    background: url("../../icons/next.png");
+    background: url("../../Icons/next.png");
     margin-right: 8%;
 }
 .importance button, .action button{
@@ -127,12 +128,12 @@ ul li{
     margin: 0 0 0 0 !important;
 }
 .activeLamp{
-    background: url("../../icons/lamp1.png");
+    background: url("../../Icons/lamp1.png");
     margin: 0 12px 0 12px;
 }
 
 .inactiveLamp{
-    background: url("../../icons/lamp2.png");
+    background: url("../../Icons/lamp2.png");
     margin: 0 12px 0 12px;
 }
 .edit{
@@ -151,10 +152,10 @@ ul li{
 }
 
 .action button:first-child{
-    background: url("../../icons/garbage.png");
+    background: url("../../Icons/garbage.png");
 }
 .action button:last-child{
-    background: url("../../icons/success.png");
+    background: url("../../Icons/success.png");
 }
 .action button:last-child, .buttons button:last-child{
     margin-left: 12px;

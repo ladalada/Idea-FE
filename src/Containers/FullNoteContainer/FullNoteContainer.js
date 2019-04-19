@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
-import URL from '/./Constants'
-import FullNote from '/././FullNote'
+import URL from '../../Constants'
+import FullNote from '../../Components/FullNote'
 
 const Note ={
     id : 'new', //автоматически заполняется
@@ -27,9 +27,8 @@ class FullNoteContainer extends Component{
             fetch(`${URL}note`, {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
-                body: {
-                    "Note": this.state.Note
-                }
+                body: JSON.stringify(this.state.Note)
+
             }).then((error) => {
                 console.log(error);
 
@@ -48,12 +47,13 @@ class FullNoteContainer extends Component{
     }
 
 
-    componentDidMount() {
+    componentWillMount() {
+
         if(this.state.id==='new'){
             this.state.Note = Note;
         }
         else {
-            fetch(`${URL}${id}`)
+            fetch(`${URL}${this.state.id}`)
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({Note: response});
@@ -70,3 +70,4 @@ class FullNoteContainer extends Component{
         )
     }
 }
+export default FullNoteContainer;

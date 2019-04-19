@@ -3,7 +3,6 @@ import React, { Component }  from 'react';
 import Filter from "../Filter";
 import Content from "../Content";
 
-
 class NotesPage extends Component {
     render() {
         return (

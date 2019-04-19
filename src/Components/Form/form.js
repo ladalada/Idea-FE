@@ -1,6 +1,7 @@
 import './form.css';
 import '../Header/header.css';
 import React, { Component }  from 'react';
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Form extends Component {
         this.state = {
             new_user: props.user,
             check_user: props.user,
-            login_page: true
+            login_page: props.is_login
         };
 
         this.login_page = this.login_page.bind(this);
@@ -45,12 +46,20 @@ class Form extends Component {
                     this.state.login_page ? (
                         <div>
                             <button className="submit_button" onClick={this.log_in_button}> Log in </button>
-                            <button className="switch_button" onClick={this.login_page}> Wanted to sign up? </button>
+                            <button className="switch_button" onClick={this.login_page}>
+                                <Link to={{ pathname: '/signup' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>
+                                    Wanted to sign up?
+                                </Link>
+                            </button>
                         </div>
                     ) : (
                         <div>
                             <button className="submit_button" onClick={this.sign_up_button}> Sign up </button>
-                            <button className="switch_button" onClick={this.login_page}> Wanted to log in? </button>
+                            <button className="switch_button" onClick={this.login_page}>
+                                <Link to={{ pathname: '/login' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>
+                                    Wanted to log in?
+                                </Link>
+                            </button>
                         </div>
                     )
                 }

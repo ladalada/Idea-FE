@@ -69,7 +69,6 @@
     right: 0;
     top: 0;
 
-    color: #F2F2F2;
     font-size: 5vh;
     text-align: right;
 
@@ -78,8 +77,4 @@
     border: none;
     background-color: transparent;
 
-}
-
-.header {
-    border: none;
 }

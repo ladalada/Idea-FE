@@ -8,6 +8,8 @@ const user = {
     password: ''
 };
 
+const is_login = false;
+
 class SignUpContainer extends Component {
 
     constructor(props) {
@@ -37,7 +39,7 @@ class SignUpContainer extends Component {
 
     render() {
         return (
-            <Form sign_up={this.sign_up} user={user}/>
+            <Form sign_up={this.sign_up} user={user} is_login={is_login}/>
         )
     }
 }

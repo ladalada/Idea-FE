@@ -1,5 +1,89 @@
-.header {
+._header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.login_header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.signup_header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.notes_header {
     grid-area: header;
     background-color: #333333;
     border-bottom: 5px solid #FFD15C;
+}
+
+.idea_icon {
+    position: absolute;
+    height: 8vh;
+    left: 1.5vw;
+    top: 1.5vh;
+}
+
+.idea_title {
+    position: absolute;
+    left: 6.2vw;
+    top: 1vh;
+    font-size: 7vh;
+    font-family: "Josefin Sans", "Leelawadee UI";
+    -webkit-text-stroke: 2px #F2F2F2;
+    color: #F2F2F2;
+}
+
+.plus_icon {
+    position: absolute;
+    background: url("../../Icons/plus.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 5.5vh;
+    height: 5.5vh;
+    right: 6vw;
+    top: 2.8vh;
+}
+
+.menu_button {
+    position: absolute;
+    background: url("../../Icons/menu.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 5.5vh;
+    height: 5.5vh;
+    right: 1.5vw;
+    top: 2.8vh;
+}
+
+
+.menu_content {
+    position: absolute;
+    top: 12vh;
+    width: 16vw;
+    right: 0;
+    background-color: #FFD15C;
+}
+
+.menu_content a {
+    display: block;
+    text-decoration: none;
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 4vh;
+    padding: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+.menu_content a:hover {
+    background-color: #E9BF54
 }

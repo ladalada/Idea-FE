@@ -20,8 +20,20 @@ class FullNoteContainer extends Component{
         };
         this.onSave = this.onSave.bind(this)
         this.onDelete = this.onDelete.bind(this)
+        this.getTags = this.getTags.bind(this);
     }
+    getTags(){
+        fetch(`${URL}tags`)
+            .then((response) => response.json())
+            .then((response) => {
+                this.state.tags = response
 
+            })
+            .then((error) => {
+                this.setState({false: true});
+            })
+
+    }
     //update Note (from FullNote)
     onSave(Note) {
         console.log(Note)

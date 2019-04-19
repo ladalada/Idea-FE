@@ -5,24 +5,13 @@ import { Link } from 'react-router-dom';
 class Fullnote extends Component{
     constructor(props){
         super(props);
-
         this.state = {
             Note: props.Note, //если новая - пусто, если существующаяя - передаем ее\
             tags:props.Note.tags,
+            priority:props.Note.priority,
             tagsEdit:false
         };
-        switch ( props.Note.priority){
-            case "ONE":
-                this.state.priority=1
-                break;
-            case "TWO":
-                this.state.priority=2
-                break;
-            case "THREE":
-                this.state.priority=3
-                break;
 
-        }
         this.handleCancel = this.handleCancel.bind(this);
         this.handleCreate = this.handleCreate.bind(this);
         this.handleClickTags = this.handleClickTags.bind(this);
@@ -44,11 +33,14 @@ class Fullnote extends Component{
         this.setState(state => ({
             tagsEdit: !state.tagsEdit
         }));
+
     }
     //добавление тегов
     handleAddTags(e){
         let tags = e.target.parentNode.children[0].value.split(" ");
         for(let i in tags){
+            if(tags[i]=="")
+                continue;
             let stop = false;
             for (let j of this.state.tags) {
                 if (j.name == tags[i]){
@@ -99,19 +91,7 @@ class Fullnote extends Component{
         }
         this.state.Note.title = document.getElementById("note_title").value;
         this.state.Note.text = document.getElementsByClassName("text")[0].value;
-        console.log(this.state.priority)
-        switch (this.state.priority){
-            case 1:
-                this.state.Note.priority = "ONE"
-                break;
-            case 2:
-                this.state.Note.priority = "TWO"
-                break;
-            case 3:
-                this.state.Note.priority = "THREE"
-                break;
-        }
-
+        this.state.Note.priority = this.state.priority;
         this.state.Note.tags = this.state.tags;
         this.props.onSave(this.state.Note); //обращаемся к FullNoteContainer
         alert("created successful!")
@@ -120,6 +100,7 @@ class Fullnote extends Component{
     render(){
         let note = this.state.Note;
         let tags = note.tags;
+
         return(
             <nav className="fullnote active">
                 {this.state.Note.id==='new' ? ( null ):(<div id="prev"><button onClick={this.getPrevNote}></button></div>)}
@@ -138,6 +119,7 @@ class Fullnote extends Component{
                             this.state.tagsEdit ? (
                                 <div className="edit">
                                  <textarea placeholder='#newtag' onClick='return false'>
+
                                  </textarea>
                                     <button onClick={this.handleAddTags}>add</button>
                                 </div>

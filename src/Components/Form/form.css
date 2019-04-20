@@ -1,0 +1,80 @@
+.form {
+    position: absolute;
+    width: 31vw;
+    height: 60vh;
+    left: 34.5vw;
+    top: 21.5vh;
+
+    background: #FBFCFC;
+    border: 12px solid #FFD15C;
+    box-sizing: border-box;
+}
+
+.username {
+    position: absolute;
+
+    width: 23.9vw;
+    height: 8vh;
+    left: 38vw;
+    top: 34vh;
+
+    color: #000000;
+    font-size: 4vh;
+    padding: 15px;
+
+    border: none;
+    box-sizing: border-box;
+    background-color: #E0E0E0;
+}
+
+.password {
+    position: absolute;
+
+    width: 23.9vw;
+    height: 8vh;
+    left: 38vw;
+    top: 50vh;
+
+    color: #000000;
+    font-size: 4vh;
+    padding: 15px;
+
+    border: none;
+    box-sizing: border-box;
+    background-color: #E0E0E0;
+
+}
+
+.submit_button {
+    position: absolute;
+
+    height: 10vh;
+    left: 45.5vw;
+    top: 64vh;
+
+    color: #000000;
+    font-size: 5.5vh;
+
+    cursor: pointer;
+
+    border: none;
+    background-color: transparent;
+    -webkit-text-stroke: 1px #000000;
+
+}
+
+.switch_button {
+    position: absolute;
+    height: 11vh;
+    right: 0;
+    top: 0;
+
+    font-size: 5vh;
+    text-align: right;
+
+    cursor: pointer;
+
+    border: none;
+    background-color: transparent;
+
+}

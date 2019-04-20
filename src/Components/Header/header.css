@@ -1,4 +1,22 @@
-.header {
+._header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.login_header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.signup_header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
+.notes_header {
     grid-area: header;
     background-color: #333333;
     border-bottom: 5px solid #FFD15C;

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Page404 from './Components/Page404'
 import Header from "./Components/Header";
 import NotesPage from "./Components/NotesPage";
+import SignUpContainer from './Containers/SignUpContainer.js';
+import LogInContainer from "./Containers/LogInContainer.js";
 
 class App extends Component {
     render() {
@@ -14,8 +16,8 @@ class App extends Component {
                     <Header/>
                 </div>
                 <Switch>
-                    <Route path="/login" component={Page404}/>
-                    <Route path="/signup" component={Page404}/>
+                    <Route path="/login" component={LogInContainer}/>
+                    <Route path="/signup" component={SignUpContainer}/>
                     <Route path="/notes" component={NotesPage}/>
                     <Route path="/note/:id" component={FullNoteContainer}/>
                     <Route path="/" component={Page404}/>

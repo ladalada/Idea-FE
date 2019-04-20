@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import FullNoteContainer from './Containers/FullNoteContainer'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Page404 from './Components/Page404'
 import Header from "./Components/Header";
@@ -18,7 +19,7 @@ class App extends Component {
                     <Route path="/login" component={LogInContainer}/>
                     <Route path="/signup" component={SignUpContainer}/>
                     <Route path="/notes" component={NotesPage}/>
-                    <Route path="/notes/:id" component={Page404}/>
+                    <Route path="/note/:id" component={FullNoteContainer}/>
                     <Route path="/" component={Page404}/>
                 </Switch>
             </Router>

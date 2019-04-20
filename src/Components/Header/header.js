@@ -49,7 +49,9 @@ class Header extends Component {
                         <a> Username </a>
                         <a> Something </a>
                         <a> Something </a>
-                        <a> Sign out </a>
+                        <Link to='/'>
+                            <a> Sign out </a>
+                        </Link>
                     </div>
                     ) : (null)
                 }

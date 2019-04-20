@@ -20,7 +20,7 @@ class App extends Component {
                     <Route path="/login" component={LogInContainer}/>
                     <Route path="/signup" component={SignUpContainer}/>
                     <Route path="/notes" component={NotesPage}/>
-                    <Route path="/notes/:id" component={FullNoteContainer}/>
+                    <Route path="/note/:id" component={FullNoteContainer}/>
                     <Route path="/" component={Start}/>
                 </Switch>
             </Router>

@@ -4,14 +4,16 @@ import idea from '../../Icons/idea.png';
 import { BrowserRouter, Link } from 'react-router-dom';
 
 
-class Header extends React.Component {
+class Header extends Component {
     constructor() {
         super();
 
         this.state = {
             show_menu: false,
-            header_class: window.location.pathname.substr(1)
+            header_class: window.location.pathname.substr(1).replace( /\//g, "_" )
         };
+
+        console.log(this.state.header_class);
 
         this.show_menu = this.show_menu.bind(this);
         this.close_menu = this.close_menu.bind(this);
@@ -37,7 +39,8 @@ class Header extends React.Component {
                 <img src={idea} className="idea_icon"/>
 
                 <div className="idea_title"> Idea </div>
-                <Link to='/note/new'><button className="plus_icon"/></Link>
+
+                <Link to='/note/new'> <button className="plus_icon"/> </Link>
           
                 <button className="menu_button" onClick={this.show_menu}/>
                 {
@@ -46,7 +49,9 @@ class Header extends React.Component {
                         <a> Username </a>
                         <a> Something </a>
                         <a> Something </a>
-                        <a> Sign out </a>
+                        <Link to='/'>
+                            <a> Sign out </a>
+                        </Link>
                     </div>
                     ) : (null)
                 }

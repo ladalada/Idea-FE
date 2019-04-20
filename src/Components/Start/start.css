@@ -1,0 +1,78 @@
+.big_idea_icon {
+    position: absolute;
+    height: 51.5vh;
+    left: 17vw;
+    top: 16vh;
+}
+
+.big_idea_title {
+    position: absolute;
+    left: 22vw;
+    top: 67vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 15vh;
+
+    color: #F2F2F2;
+    -webkit-text-stroke: 3px #F2F2F2;
+}
+
+.statement {
+    position: absolute;
+    left: 57vw;
+    top: 33vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 10vh;
+
+    line-height: 11vh;
+    text-align: center;
+
+    color: #F2F2F2;
+}
+
+.sign_up {
+    position: absolute;
+    right: 1vw;
+    top: 2vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 5vh;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    -webkit-text-stroke: 1px #FFD15C;
+}
+
+.log_in {
+    position: absolute;
+    right: 12vw;
+    top: 2vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 5vh;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    -webkit-text-stroke: 1px #F2F2F2;
+}
+
+.question {
+    position: absolute;
+
+    background: url("../../Icons/question.png");
+    background-size: cover;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 6vh;
+    height: 6vh;
+    left: 2vw;
+    top: 2vh;
+}

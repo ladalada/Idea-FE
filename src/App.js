@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import FullNoteContainer from './Containers/FullNoteContainer'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Page404 from './Components/Page404'
+import Page404 from './Components/Page404';
+import Start from './Components/Start';
 import Header from "./Components/Header";
 import NotesPage from "./Components/NotesPage";
-import SignUpContainer from './Containers/SignUpContainer.js';
 import LogInContainer from "./Containers/LogInContainer.js";
+import SignUpContainer from './Containers/SignUpContainer.js';
+import FullNoteContainer from './Containers/FullNoteContainer';
 
 class App extends Component {
     render() {
@@ -20,7 +21,7 @@ class App extends Component {
                     <Route path="/signup" component={SignUpContainer}/>
                     <Route path="/notes" component={NotesPage}/>
                     <Route path="/note/:id" component={FullNoteContainer}/>
-                    <Route path="/" component={Page404}/>
+                    <Route path="/" component={Start}/>
                 </Switch>
             </Router>
         );

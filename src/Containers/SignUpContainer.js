@@ -18,19 +18,23 @@ class SignUpContainer extends Component {
 
     sign_up() {
         //post
-        fetch('http://localhost:8083/user', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body:
-                JSON.stringify({
-                    "userName": user.username,
-                    "password": user.password,
-                })
-        }).catch((error) => {
-            console.log(error);
-        });
+        if (user.username === "" || user.password === "") alert('Fill both fields!');
+        else {
 
-        alert(user.username + " " + user.password);
+            fetch('http://localhost:8083/user', {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body:
+                    JSON.stringify({
+                        "userName": user.username,
+                        "password": user.password,
+                    })
+            }).catch((error) => {
+                console.log(error);
+            });
+
+            alert(user.username + " " + user.password);
+        }
     }
 
     render() {

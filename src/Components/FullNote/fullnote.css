@@ -27,7 +27,6 @@
  }
 
 
-
 .title{
     height: 60px;
     display: flex;
@@ -93,8 +92,8 @@ ul li{
 #back{
     background: url("../../Icons/black_arrow.png");
     background-size: 100% 100% !important;
-    height: 40px;
-    width: 40px;
+    height: 6vh;
+    width: 6vh;
     border: none;
 }
 #prev button,#next button{

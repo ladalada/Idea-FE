@@ -52,9 +52,7 @@
     left: 45.5vw;
     top: 64vh;
 
-    color: #000000;
     font-size: 5.5vh;
-
     cursor: pointer;
 
     border: none;
@@ -77,4 +75,17 @@
     border: none;
     background-color: transparent;
 
+}
+
+.back_button {
+    position: absolute;
+    background: url("../../Icons/white_arrow.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 6.2vh;
+    height: 6.2vh;
+    left: 1vw;
+    top: 1.5vh;
 }

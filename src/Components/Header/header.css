@@ -22,6 +22,12 @@
     border-bottom: 5px solid #FFD15C;
 }
 
+.note_new_header {
+    grid-area: header;
+    background-color: #333333;
+    display: none;
+}
+
 .idea_icon {
     position: absolute;
     height: 8vh;

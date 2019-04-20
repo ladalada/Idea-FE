@@ -130,7 +130,7 @@ class Fullnote extends Component{
                     </div>
                 <div className="footer">
                     <div className="buttons">
-                        <Link to='/'><button id="back"/></Link>
+                        <Link to='/notes'><button id="back"/></Link>
                     </div>
                     <div className="importance">
                         <div>

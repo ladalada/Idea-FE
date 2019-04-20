@@ -19,20 +19,23 @@ class LogInContainer extends Component {
 
     log_in() {
         //get
-        fetch(`http://localhost:8083/user/${user.username}`, {
-            method: 'get',
-            headers: {'Content-Type': 'application/json'}
-        }).then(function(response) {
-                response.text().then(function(text) {
+        if (user.username === "" || user.password === "") alert('Fill both fields!');
+        else {
+
+            fetch(`http://localhost:8083/user/${user.username}`, {
+                method: 'get',
+                headers: {'Content-Type': 'application/json'}
+            }).then(function (response) {
+                response.text().then(function (text) {
                     if (text) {
                         if (user.password === JSON.parse(text).password) console.log('log in');
                         if (user.password !== JSON.parse(text).password) alert('Wrong password!');
-                    }
-                    else alert('No such user!');
+                    } else alert('No such user!');
                 })
-        }).catch((error) => {
-            console.log(error);
-        });
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
     }
 
     render() {

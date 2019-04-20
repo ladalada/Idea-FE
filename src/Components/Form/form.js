@@ -42,10 +42,15 @@ class Form extends Component {
                 <div className="form"/>
                 <input type="text" id="username" placeholder="Username" maxLength="15" className="username"/>
                 <input type="password" id="password" placeholder="Password" maxLength="15" className="password"/>
+                <Link to={{ pathname: '/' }}> <button className="back_button"/> </Link>
                 {
                     this.state.login_page ? (
                         <div>
-                            <button className="submit_button" onClick={this.log_in_button}> Log in </button>
+                            <button className="submit_button" onClick={this.log_in_button}>
+                                <Link to={{ pathname: '/notes' }} style={{ textDecoration: 'none', color: '#000000'}}>
+                                    Log in
+                                </Link>
+                            </button>
                             <button className="switch_button" onClick={this.login_page}>
                                 <Link to={{ pathname: '/signup' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>
                                     Wanted to sign up?
@@ -54,7 +59,11 @@ class Form extends Component {
                         </div>
                     ) : (
                         <div>
-                            <button className="submit_button" onClick={this.sign_up_button}> Sign up </button>
+                            <button className="submit_button" onClick={this.sign_up_button}>
+                                <Link to={{ pathname: '/notes' }} style={{ textDecoration: 'none', color: '#000000'}}>
+                                    Sign up
+                                </Link>
+                            </button>
                             <button className="switch_button" onClick={this.login_page}>
                                 <Link to={{ pathname: '/login' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>
                                     Wanted to log in?

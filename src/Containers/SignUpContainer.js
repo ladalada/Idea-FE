@@ -3,7 +3,6 @@ import URL from '../Constants/index'; //настроить URL
 import Form from '../Components/Form';
 
 const user = {
-    id: 3, //исправить на автозаполнение!
     username: '',
     password: ''
 };
@@ -24,7 +23,6 @@ class SignUpContainer extends Component {
             headers: {'Content-Type': 'application/json'},
             body:
                 JSON.stringify({
-                    "id": user.id,
                     "userName": user.username,
                     "password": user.password,
                 })

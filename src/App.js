@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Page404 from './Components/Page404'
+import Page404 from './Components/Page404';
+import Start from './Components/Start';
 import Header from "./Components/Header";
 import NotesPage from "./Components/NotesPage";
-import Start from './Components/Start'
+import LogInContainer from "./Containers/LogInContainer.js";
+import SignUpContainer from './Containers/SignUpContainer.js';
+import FullNoteContainer from './Containers/FullNoteContainer';
 
 class App extends Component {
     render() {
@@ -14,10 +17,10 @@ class App extends Component {
                     <Header/>
                 </div>
                 <Switch>
-                    <Route path="/login" component={Page404}/>
-                    <Route path="/signup" component={Page404}/>
+                    <Route path="/login" component={LogInContainer}/>
+                    <Route path="/signup" component={SignUpContainer}/>
                     <Route path="/notes" component={NotesPage}/>
-                    <Route path="/notes/:id" component={Page404}/>
+                    <Route path="/notes/:id" component={FullNoteContainer}/>
                     <Route path="/" component={Start}/>
                 </Switch>
             </Router>

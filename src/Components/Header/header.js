@@ -1,12 +1,17 @@
 import './header.css';
 import React, { Component }  from 'react';
 import idea from '../../Icons/idea.png';
+import { BrowserRouter, Link } from 'react-router-dom';
+
 
 class Header extends React.Component {
     constructor() {
         super();
 
-        this.state = {show_menu: false};
+        this.state = {
+            show_menu: false,
+            header_class: window.location.pathname.substr(1)
+        };
 
         this.show_menu = this.show_menu.bind(this);
         this.close_menu = this.close_menu.bind(this);
@@ -28,11 +33,12 @@ class Header extends React.Component {
 
    render() {
         return (
-            <div className="header">
-
+            <div className={this.state.header_class + '_header'}>
                 <img src={idea} className="idea_icon"/>
+
                 <div className="idea_title"> Idea </div>
-                <button className="plus_icon"/>
+                <Link to='/note/new'><button className="plus_icon"/></Link>
+          
                 <button className="menu_button" onClick={this.show_menu}/>
                 {
                     this.state.show_menu ? (
@@ -44,7 +50,6 @@ class Header extends React.Component {
                     </div>
                     ) : (null)
                 }
-
             </div>
         )
     }

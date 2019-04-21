@@ -25,7 +25,9 @@
 }.tags ul li:nth-child(5n+6){
      color: #F19136;
  }
-
+.tags{
+    overflow: auto;
+}
 
 .title{
     height: 60px;

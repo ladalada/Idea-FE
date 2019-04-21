@@ -2,3 +2,118 @@
     grid-area: filter;
     background-color: #4F4F4F;
 }
+
+.search {
+    position: absolute;
+    width: 11vw;
+    left: 1.5vw;
+    top: 17vh;
+
+    background: #FBFCFC;
+    border-radius: 12px;
+    border: none;
+
+    padding: 1.3vh 3vw 1.3vh 0.7vw;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 3.8vh;
+
+    color: #000000;
+
+}
+
+.search_button {
+    position: absolute;
+    background: url("../../Icons/search.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 4.5vh;
+    height: 4.5vh;
+    left: 13.3vw;
+    top: 18.5vh;
+
+    z-index: 1;
+}
+
+.date_sort {
+    position: absolute;
+
+    width: 11vw;
+    left: 1.5vw;
+    bottom: 4vh;
+    height: 5vh;
+
+    background: #FFD15C;
+    border-radius: 12px;
+    border: none;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 3vh;
+
+    padding: 1.5vh 3vw 1vh 0.7vw;
+
+    color: #000000;
+}
+
+.data_sort_button {
+    position: absolute;
+    background: url("../../Icons/triangle.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 3.2vh;
+    height: 3.2vh;
+    left: 13.6vw;
+    bottom: 6.6vh;
+
+    z-index: 1;
+}
+
+.priority {
+    position: absolute;
+    left: 1vw;
+    bottom: 15vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.lamp {
+    background: url("../../Icons/lamp2.png");
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
+    width: 3.5vw;
+    height: 8.5vh;
+    margin: 0 0.8vw 0 0.8vw;
+}
+
+.filter_tags {
+    position: absolute;
+    left: 2.3vw;
+    top: 29vh;
+
+    display: flex;
+    flex-direction: column;
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 4vh;
+
+    color: #FBFCFC;
+}
+
+.border {
+    background-color: #333333;
+    border-radius: 24px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin: 1vh;
+}
+
+.tags_title {
+    margin-bottom: 1.5vh;
+}

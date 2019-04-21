@@ -46,11 +46,12 @@ class Form extends Component {
                 {
                     this.state.login_page ? (
                         <div>
-                            <Link to='/notes' style={{ textDecoration: 'none', color: '#000000'}}>
+
                             <button className="submit_button" onClick={this.log_in_button}>
+                                <a href='/notes' style={{ textDecoration: 'none', color: '#000000'}}>
                                     Log in
+                                </a>
                             </button>
-                                </Link>
 
                             <button className="switch_button" onClick={this.login_page}>
                                 <Link to={{ pathname: '/signup' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>

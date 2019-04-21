@@ -32,7 +32,7 @@ class LogInContainer extends Component {
                         if (user.password === JSON.parse(text).password){
                             user.id=JSON.parse(text).id;
                             console.log('log in');
-                            localStorage.setItem("user_id",user.id)
+                            localStorage.setItem("user_id",user.id);
                             login = true;
                         }
                         if (user.password !== JSON.parse(text).password) alert('Wrong password!');

@@ -9,7 +9,8 @@ class Fullnote extends Component{
             Note: props.Note, //если новая - пусто, если существующаяя - передаем ее\
             tags:props.Note.tags,
             priority:props.Note.priority,
-            tagsEdit:false
+            tagsEdit:false,
+            new_tags:[]
         };
 
         this.handleCancel = this.handleCancel.bind(this);
@@ -52,11 +53,13 @@ class Fullnote extends Component{
                 continue;
             }
            else{
-                let id = Math.floor(Math.random() * 100)
-                this.state.tags.push({id:id,name:tags[i]})
+                this.state.tags.push({id:"",name:tags[i]})
+                this.state.new_tags.push({id:"",name:tags[i]})
             }
         }
-        console.log(this.state.tags)
+        if(this.state.new_tags.length>0){
+            this.props.setTags(this.state.new_tags);
+        }
     }
 
 //изменение важности заметки
@@ -84,10 +87,19 @@ class Fullnote extends Component{
 
     //создание заметки
     handleCreate(){
-
-        if(this.state.Note.id=="new"){
+        if(this.state.Note.id ==="new"){
             this.state.Note.id = Math.floor(Math.random()*100);
+        }
 
+        this.state.tags = this.props.Note.tags;
+        for(let i of this.state.tags){
+            if(i.id === ""){
+                for(let j of this.state.new_tags){
+                    if(i.name === j.name){
+                        i.id = j.id;
+                    }
+                }
+            }
         }
         this.state.Note.title = document.getElementById("note_title").value;
         this.state.Note.text = document.getElementsByClassName("text")[0].value;

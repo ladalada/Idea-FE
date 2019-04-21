@@ -21,20 +21,37 @@ class FullNoteContainer extends Component{
         this.onSave = this.onSave.bind(this)
         this.onDelete = this.onDelete.bind(this)
         this.getTags = this.getTags.bind(this);
+        this.setTags = this.setTags.bind(this);
     }
-    getTags(){
+    setTags(tags){
+       //console.log(tags);
+        for(let i of tags) {
+            fetch(`${URL}tag`, {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(i)
+            }).then((error) => {
+                console.log(error);
+            }).then(()=>{ this.getTags(tags)})
+        }
+    }
+    getTags(tags){
         fetch(`${URL}tags`)
             .then((response) => response.json())
             .then((response) => {
-                this.state.tags = response
-
+                for(let i of response) {
+                    for (let j of tags) {
+                        if (j.name === i.name) {
+                            j.id = i.id;
+                        }
+                    }
+                }
             })
             .then((error) => {
                 this.setState({false: true});
             })
-
     }
-    //update Note (from FullNote)
+       //update Note (from FullNote)
     onSave(Note) {
         console.log(Note)
             //POST
@@ -84,7 +101,9 @@ class FullNoteContainer extends Component{
     render() {
         if(this.state.Note!=undefined) {
             return (
-                <FullNote Note={this.state.Note} onSave={this.onSave} onDelete={this.onDelete}/>
+                <FullNote Note={this.state.Note} onSave={this.onSave} onDelete={this.onDelete}
+                          setTags={this.setTags}
+                          getTags={this.getTags}/>
             )
         }
         else{

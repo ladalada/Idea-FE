@@ -1,11 +1,18 @@
 import './note.css';
 import React, { Component }  from 'react';
-
+import {Link } from 'react-router-dom';
 
 
 class Note extends Component {
     constructor(props) {
         super(props);
+        this.load = this.load.bind(this);
+        this.state={to:
+            '/note/'+props.id}
+
+    }
+    load(){
+        this.props.load(this.props.id)
     }
     render() {
         return (
@@ -15,7 +22,9 @@ class Note extends Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <div className="body">
-                    <div className="text">{this.props.text}</div>
+
+                    <Link to={this.state.to}><div className="text">{this.props.text}</div></Link>
+
                 </div>
             </nav>
         );

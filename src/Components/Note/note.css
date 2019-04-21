@@ -10,6 +10,10 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0 2% 0 0;
 }
+.note .body a{
+    text-decoration: none;
+    color: black;
+}
 input[type='checkbox']{
     position:relative;
     left:2%;

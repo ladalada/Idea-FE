@@ -18,6 +18,7 @@ class LogInContainer extends Component {
     }
 
     log_in() {
+        let login=false;
         //get
         if (user.username === "" || user.password === "") alert('Fill both fields!');
         else {
@@ -28,13 +29,19 @@ class LogInContainer extends Component {
             }).then(function (response) {
                 response.text().then(function (text) {
                     if (text) {
-                        if (user.password === JSON.parse(text).password) console.log('log in');
+                        if (user.password === JSON.parse(text).password){
+                            user.id=JSON.parse(text).id;
+                            console.log('log in');
+                            localStorage.setItem("user_id",user.id)
+                            login = true;
+                        }
                         if (user.password !== JSON.parse(text).password) alert('Wrong password!');
                     } else alert('No such user!');
                 })
             }).catch((error) => {
                 console.log(error);
-            });
+            })
+
         }
     }
 

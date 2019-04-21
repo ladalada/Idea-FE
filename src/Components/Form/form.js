@@ -47,9 +47,9 @@ class Form extends Component {
                     this.state.login_page ? (
                         <div>
                             <button className="submit_button" onClick={this.log_in_button}>
-                                <Link to={{ pathname: '/notes' }} style={{ textDecoration: 'none', color: '#000000'}}>
+                                <a href='/notes' style={{ textDecoration: 'none', color: '#000000'}}>
                                     Log in
-                                </Link>
+                                </a>
                             </button>
                             <button className="switch_button" onClick={this.login_page}>
                                 <Link to={{ pathname: '/signup' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>
@@ -60,9 +60,9 @@ class Form extends Component {
                     ) : (
                         <div>
                             <button className="submit_button" onClick={this.sign_up_button}>
-                                <Link to={{ pathname: '/notes' }} style={{ textDecoration: 'none', color: '#000000'}}>
+                                <a href='/notes' style={{ textDecoration: 'none', color: '#000000'}}>
                                     Sign up
-                                </Link>
+                                </a>
                             </button>
                             <button className="switch_button" onClick={this.login_page}>
                                 <Link to={{ pathname: '/login' }} style={{ textDecoration: 'none', color: '#F2F2F2'}}>

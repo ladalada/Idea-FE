@@ -10,7 +10,7 @@ class NotesPage extends Component {
             <div>
                 <div className="grid_two">
                     <Filter/>
-                    <NoteContainer user_id={2}/>
+                    <NoteContainer user_id={localStorage.getItem("user_id")}/>
                 </div>
             </div>
         )

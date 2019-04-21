@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    border-bottom:3px solid blue;
+    border-bottom:3px solid #3696F1;
 }
 .title textarea{
     margin: 2% 2% 2% 2%;
@@ -138,12 +138,6 @@ ul li{
 .edit{
     position: relative;
     left:20%;
-}
-.cancel:hover{
-    background-color:rgba(255, 0, 4, 0.63) !important;
-}
-.create:hover{
-    background-color:rgba(0, 219, 7, 1) !important;
 }
 
 .footer {

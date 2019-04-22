@@ -129,11 +129,11 @@ class Fullnote extends Component{
                     <div className="tags"  onClick={this.handleClickTags}>
                         {
                             this.state.tagsEdit ? (
-                                <div className="edit">
+                                <div className="display_tag">
                                  <textarea placeholder='#newtag' onClick='return false'>
 
                                  </textarea>
-                                    <button onClick={this.handleAddTags}>add</button>
+                                    <button className="add_button" onClick={this.handleAddTags}>Add</button>
                                 </div>
                             ) : (this.state.tags.length===0 ? (<textarea placeholder="#Tags"></textarea>):(<ul>{this.state.tags.map((tag) =>
                                 <li key={tag.name.toString()}>#{tag.name}</li>)}
@@ -142,7 +142,7 @@ class Fullnote extends Component{
                     </div>
                 <div className="footer">
                     <div className="buttons">
-                        <Link to='/notes'><button id="back"/></Link>
+                        <a href='/notes'><button id="back"/></a>
                     </div>
                     <div className="importance">
                         <div>

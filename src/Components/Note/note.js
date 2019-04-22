@@ -16,17 +16,19 @@ class Note extends Component {
     }
     render() {
         return (
-            <nav className="note">
-                <div className="title">
-                    <input type='checkbox'></input>
-                    <h1>{this.props.title}</h1>
-                </div>
-                <div className="body">
+            <div>
+                <nav className="note">
+                    <div className="title">
+                        {/*<input type='checkbox'></input>*/}
+                        <h1>{this.props.title}</h1>
+                    </div>
+                    <div className="body">
 
-                    <Link to={this.state.to}><div className="text">{this.props.text}</div></Link>
+                        <Link to={this.state.to}><div className="text">{this.props.text}</div></Link>
 
-                </div>
-            </nav>
+                    </div>
+                </nav>
+            </div>
         );
     }
 }

@@ -16,11 +16,11 @@ class Content extends Component {
             <div>
                 <ul>{this.state.Notes.map((note) =>
                     //let to = "/note/"+note.id;
-                    <li key={note.toString()}><Note id={note.id} title={note.title} text={note.text}
-                                                                onClick={this.load}/></li>
-
-                                                                )}
-                </ul>))
+                    <li key={note.toString()}>
+                        <Note id={note.id} title={note.title} text={note.text} onClick={this.load}/>
+                    </li>
+                )}
+                </ul>
             </div>
         )
     }
